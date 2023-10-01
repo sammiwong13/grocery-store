@@ -173,3 +173,61 @@ article {
         display: none;
     }
 }
+
+/*Weekly Deals*/
+.product-content {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    background-color: #cfe3be;
+    padding: 20px;
+}
+
+.product-list {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    height: 200px;
+    box-shadow: 5px 5px 5px #5a9b57;
+    border-radius: 5%;
+}
+
+.product-image {
+    width: 30%;
+    height: 30%;
+}
+
+.product-name {
+    font-size: 30px;
+}
+
+.rating-star {
+    color: #fdfd96;
+    text-shadow: 0 0 3px orange;
+}
+
+.rating-count {
+    color: black;
+    font-size: 20px;
+}
+
+.price {
+    font-size: 25px;
+    color: black;
+}
+
+/*Footer*/
+footer {
+    background-color: #75bd85;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+footer>a {
+    text-decoration: none;
+    color: white;
+
+}

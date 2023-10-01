@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link href="../styles/faqs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="page">
+        <header class="header">
+            <!--Logo, search bar, shopping cart button-->
+            <div class="products-header-content">
+                <a href="../index.html" class="logo">S Mart</a>
+                <input type="search" name="search-bar" placeholder="search..." class="search-bar">
+                <!--Solution 1: when user uses search bar, go to products.html and the section that has the product-->
+                <a href="shopping-cart.html" class="shopping-cart">&#128722;</a>
+            </div>
+            <nav class="navigation-bar">
+                <!--Include each category-->
+                <a href="fresh-produce.html">Fresh Produce</a>
+                <a href="meat-and-seafood.html">Meat & Seafood</a>
+                <a href="dairy-and-eggs.html">Dairy & Eggs</a>
+                <a href="beverage.html">Beverage</a>
+                <a href="snack.html">Snack</a>
+            </nav>
+        </header>
+        <div id="faqs-content">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-container">
+                <div class="faq active">
+                    <h3 class="faq-title">
+                        Is is possible for products to be refunded?
+                    </h3>
+
+                    <p class="faq-text">
+                        Depending on the circumstance, products can be refunded within two hours of purchase.
+                    </p>
+
+                    <button class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="faq">
+                    <h3 class="faq-title">
+                        When will I receive the order?
+                    </h3>
+                    <p class="faq-text">
+                        Order typically arrives in five business days.
+                    </p>
+                    <button class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="faq">
+                    <h3 class="faq-title">
+                        Is there a physical location of the store?
+                    </h3>
+                    <p class="faq-text">
+                        No, S Mart is a fully online grocery service.
+                    </p>
+                    <button class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="faq">
+                    <h3 class="faq-title">
+                        How can I get involved?
+                    </h3>
+                    <p class="faq-text">
+                        S Mart is currently not looking for any employees, thank you for your interest.
+                    </p>
+                    <button class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="faq">
+                    <h3 class="faq-title">
+                        Will holidays affect my food arrival time?
+                    </h3>
+                    <p class="faq-text">
+                        No, S Mart delivers even on holidays.
+                    </p>
+                    <button class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="../scripts/faqs.js"></script>
+    </div>
+</body>
+
+</html>

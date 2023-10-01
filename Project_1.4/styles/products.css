@@ -109,8 +109,13 @@ product-list box shadow: #5a9b57;
     border-radius: 5%;
 }
 
-.product-list:hover {
+.add-to-cart-btn:hover {
     background-color: #bddfcf;
+}
+
+.product-image {
+    width: 30%;
+    height: 30%;
 }
 
 .product-name {
@@ -139,4 +144,19 @@ product-list box shadow: #5a9b57;
     color: #597d37;
     padding: 10px;
     border-radius: 10%;
+}
+
+/*Footer*/
+footer {
+    background-color: #75bd85;
+    width: 99%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+footer>a {
+    text-decoration: none;
+    color: white;
+
 }
