@@ -171,6 +171,11 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         // mySubtotalSum.textContent = subtotalSum(newDataSubtotal);
         tax.textContent = "7%";
 
+        //each time you click on clear cart, the table will refresh
+        let clearCart = document.getElementById("clear-cart");
+        clearCart.addEventListener("click", () => {
+            localStorage.clear();
+        });
     }
 }
 
@@ -224,4 +229,3 @@ function updateQuantity(elementQty, objectProduct, array) {
 
 
 
-//each time you click on the shopping cart-button, the table will refresh

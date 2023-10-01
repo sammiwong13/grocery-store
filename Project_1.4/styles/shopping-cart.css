@@ -86,6 +86,16 @@ product-list box shadow: #5a9b57;
     color: #597d37;
 }
 
+#clear-cart {
+    background-color: #75bd85;
+    width: 20%;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
 .table-content {
     display: grid;
     grid-template-columns: 75% 20%;
