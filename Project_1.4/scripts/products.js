@@ -108,6 +108,9 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         let newBtnUp = document.createElement("button");
         let newDataSubtotal = document.createElement("td");
 
+        //adding class attribute for each row
+        newRow.setAttribute("class", "table-row")
+
         //Setting attributes of newDataImg element
         newDataImg.setAttribute("src", storedItems[i].image);
         newDataImg.setAttribute("class", "shopping-cart-images");
@@ -117,8 +120,8 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         newDataQuantityCell.setAttribute("class", "quantity-cell")
         newBtnDown.setAttribute("type", "button");
         newBtnUp.setAttribute("type", "button");
-        newBtnDown.setAttribute("class", "decrease-product-quantity");
-        newBtnUp.setAttribute("class", "increase-product-quantity");
+        newBtnDown.setAttribute("class", "decrease-product-quantity quantity-btn");
+        newBtnUp.setAttribute("class", "increase-product-quantity quantity-btn");
 
         newBtnDown.textContent = "down";
         // newDataQuantity.textContent = "1";
@@ -143,7 +146,8 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         });
         newBtnUp.addEventListener("click", function () {
             handleBtnUpClick(newDataQuantity);
-            myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
+            updateQuantity(newDataQuantity, storedItems[i], storedItems);
+            localStorage.setItem("myCartItems", JSON.stringify(distinctCombinedCart));
             newDataSubtotal.textContent = myDataSubtotal;
         });
         //end of change quantity
@@ -177,6 +181,7 @@ if (document.URL.includes("pages/shopping-cart.html")) {
             localStorage.clear();
         });
     }
+
 }
 
 function handleBtnDownClick(element) {
@@ -219,10 +224,13 @@ function subtotalSum(element) {
 
 // if quantity on table doesn't match quantity in storedItem, update quantity in storedItem
 function updateQuantity(elementQty, objectProduct, array) {
+
+    //quantity is already set to storedItem.quantity
+    //            updateQuantity(newDataQuantity, storedItems[i], storedItems);
+
     let quantity = parseInt(elementQty.textContent);
     let storedQuantity = objectProduct.quantity;
-
-    if (quantity != storedQuantity) {
+    if (storedQuantity !== quantity) {
         storedQuantity = quantity;
     }
 }

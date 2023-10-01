@@ -94,6 +94,7 @@ product-list box shadow: #5a9b57;
     color: white;
     text-decoration: none;
     padding: 10px;
+    box-shadow: 5px 5px 5px #5a9b57;
 }
 
 .table-content {
@@ -112,6 +113,14 @@ product-list box shadow: #5a9b57;
 #shopping-cart-table {
     background-color: #cfe3be;
     padding: 30px;
+    box-shadow: 5px 5px 5px #5a9b57;
+}
+
+#shopping-cart-table .table-row {
+    background-color: #bddfcf;
+    text-align: center;
+    font-size: 30px;
+    color: #6ab767;
 }
 
 #shopping-cart-table th {
@@ -124,4 +133,14 @@ product-list box shadow: #5a9b57;
     display: flex;
     gap: 10px;
     justify-content: center;
+}
+
+.quantity-btn {
+    background-color: #cfe3be;
+    border-color: #6ab767;
+    border-width: 3px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #597d37;
+    padding: 10px;
+    border-radius: 10%;
 }
