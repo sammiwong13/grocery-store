@@ -1,0 +1,172 @@
+<!--&#9733;&#9733;&#9733;&#9733;&#9733; for shaded in star
+//&#9734; for empty star
+!-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Mart</title>
+</head>
+
+<body>
+    <div id="page">
+        <header id="header">
+            <!--Logo, search bar, shopping cart button-->
+            <a href="../index.html">S Mart</a>
+            <input type="search" name="search-bar" placeholder="search...">
+            <!--Solution 1: when user uses search bar, go to products.html and the section that has the product-->
+            <a href="shopping-cart.html">Shopping Cart</a>
+            <nav id="navigation-bar">
+                <!--Include each category-->
+                <a href="products.html#fresh-product-content">Fresh Produce</a>
+                <a href="products.html#meat-and-produce-content">Meat & Seafood</a>
+                <a href="products.html#dairy-and-eggs-content">Dairy & Eggs</a>
+                <a href="products.html#beverage-content">Beverage</a>
+                <a href="products.html#snack-content">Snack</a>
+            </nav>
+        </header>
+
+        <div id="content">
+            <article id="fresh-produce-content">
+                <!--Sort by-->
+                <span>Sort By: </span>
+                <select name="sort">
+                    <option value="price:LowtoHigh">Price: Low to High</option>
+                    <option value="price:HightoLow">Price: High to Low</option>
+                    <option value="alphabetical:AtoZ">Alphabetical: A to Z</option>
+                    <option value="alphabetical:ZtoA">Alphabetical: Z to A</option>
+                </select>
+
+                <h3>Fresh Produce</h3>
+                <div id="cabbage" class="fresh-produce product-list">
+                    <img id="img-cabbage" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Cabbage</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-cabbage">64,187</span>
+                    <div id="price-cabbage" class="price">$4.99</div>
+                    <button class="add-to-cart-btn" id="cabbage-btn">Add to Cart</button>
+                </div>
+
+                <div id="carrot" class="fresh-produce product-list">
+                    <img id="img-carrot" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Carrot</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-carrot">34,121</span>
+                    <div id="price-carrot" class="price">$2.99 <s>$4.99</s></div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="eggplant" class="fresh-produce product-list">
+                    <img id="img-eggplant" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Eggplant</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-eggplant">63,374</span>
+                    <div id="price-eggplant" class="price">$1.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="tomato" class="fresh-produce product-list">
+                    <img id="img-tomato" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Tomato</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-tomato">83,824</span>
+                    <div id="price-tomato" class="price">$2.50</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <!-- <div id="lettuce" class="fresh-produce product-list">
+                    <img id="img-lettuce" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Lettuce</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-lettuce">23,472</span>
+                    <div id="price-lettuce">$4.59</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="corn" class="fresh-produce product-list">
+                    <img id="img-corn" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Corn</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-corn">55,642</span>
+                    <div id="price-corn">$3.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="bitterMelon" class="fresh-produce product-list">
+                    <img id="img-bitter-melon" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Bitter Melon</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-bitter-melon">12,359</span>
+                    <div id="price-bitter-melon">$6.59</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="gourd" class="fresh-produce product-list">
+                    <img id="img-gourd" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Gourd</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-gourd">8,263</span>
+                    <div id="price-gourd">$5.00</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="cauliflower" class="fresh-produce product-list">
+                    <img id="img-cauliflower" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Cauliflower</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-cauliflower">25,742</span>
+                    <div id="price-cauliflower">$4.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="broccoli" class="fresh-produce product-list">
+                    <img id="img-broccoli" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Broccoli</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-broccoli">21,631</span>
+                    <div id="price-broccoli">$4.00</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="apple" class="fresh-produce product-list">
+                    <img id="img-apple" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Apple</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-apple">29,583</span>
+                    <div id="price-apple">$0.99 <s>$1.99</s></div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="watermelon" class="fresh-produce product-list">
+                    <img id="img-watermelon" src="../images/imagePlaceholder.png" width="10%" height="10%">
+                    <div>Watermelon</div>
+                    <span class="rating-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="rating-watermelon">15,683</span>
+                    <div id="price-watermelon">$3.99 <s>8.99</s></div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div> -->
+            </article>
+            <article id="meat-and-seafood-content">
+                <h3>Meat and Seafood</h3>
+            </article>
+            <article id="dairy-and-eggs-content">
+                <h3>Dairy and Eggs</h3>
+            </article>
+            <article id="beverage-content">
+                <h3>Beverage</h3>
+            </article>
+            <article id="snack-content">
+                <h3>Snack</h3>
+            </article>
+        </div>
+        <footer>
+            <!--contact us, about us, faqs-->
+        </footer>
+    </div>
+    <script src="../scripts/products.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Mart</title>
+    <link href="../styles/shopping-cart.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="page">
+        <header class="header">
+            <!--Logo, search bar, shopping cart button-->
+            <div class="products-header-content">
+                <a href="../index.html" class="logo">S Mart</a>
+                <input type="search" name="search-bar" placeholder="search..." class="search-bar">
+                <!--Solution 1: when user uses search bar, go to products.html and the section that has the product-->
+                <a href="shopping-cart.html" class="shopping-cart">&#128722;</a>
+            </div>
+            <nav class="navigation-bar">
+                <!--Include each category-->
+                <!--Include each category-->
+                <a href="fresh-produce.html">Fresh Produce</a>
+                <a href="meat-and-seafood.html">Meat & Seafood</a>
+                <a href="dairy-and-eggs.html">Dairy & Eggs</a>
+                <a href="beverage.html">Beverage</a>
+                <a href="snack.html">Snack</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <h3 class="shopping-cart-title">Shopping Cart</h3>
+            <div class="table-content">
+                <table id="shopping-cart-table">
+                    <tr>
+                        <th>Picture</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </table>
+                <aside id="summary">
+                    <!--Summary-->
+                    <fieldset>
+                        <legend>Summary</legend>
+                        <!--maybe implemetn it as a table here?-->
+                        <table>
+                            <tr>
+                                <th>Subtotal</th>
+                                <td id="subtotal-sum"></td>
+                            </tr>
+                            <tr>
+                                <th>Tax</th>
+                                <td id="tax"></td>
+                            </tr>
+                            <tr>
+                                <th>Order Total Incl. Tax</th>
+                                <td id="order-total"></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </aside>
+            </div>
+        </div>
+        <footer>
+            <!--contact us, about us, faqs-->
+        </footer>
+        <script src="../scripts/products.js"></script>
+
+</body>
+
+</html>
