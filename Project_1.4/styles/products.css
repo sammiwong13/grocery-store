@@ -74,9 +74,9 @@ product-list box shadow: #5a9b57;
     padding: 10px;
 }
 
-/* .navigation-bar>a:hover {
+.navigation-bar>a:hover {
     background-color: #bddfcf;
-} */
+}
 
 /*Main content*/
 .content {
