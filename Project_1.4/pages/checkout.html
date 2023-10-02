@@ -5,10 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S Mart</title>
+    <link href="../styles/checkout.css" rel="stylesheet">
 </head>
 
 <body>
+    <h3 id="checkout-title">Checkout</h3>
+    <div class="checkout-container">
+        <p id="description">Fields marked with * are mandatory</p>
+        <section id="shipping-address" class="checkout-content">
+            <h2 class="checkout-subTitles">1. Shipping Address</h2>
+            <div id="shipping-address-content">
+                <div class="shipping-address-info">
+                    <label for="firstNameShippingAddress">First Name *</label>
+                    <input type="text" name="firstNameShippingAddress" id="firstNameShippingAddress" required="required"
+                        class="shipping-address-input">
+                </div>
+                <div class="shipping-address-info">
+                    <label for="lastNameShippingAddress">Last Name *</label>
+                    <input type="text" name="lastNameShippingAddress" id="lastNameShippingAddress" required="required"
+                        class="shipping-address-input">
+                </div>
+                <div class="shipping-address-info">
+                    <label for="Email">Email *</label>
+                    <input type="email" name="email" id="email" required="required" class="shipping-address-input">
+                </div>
+                <div class="shipping-address-info">
+                    <label for="streetAddress">Street Address *</label>
+                    <input type="text" name="streetAddress" id="streetAddress" required="required"
+                        class="shipping-address-input">
+                </div>
+                <div class="shipping-address-info">
+                    <label for="town/city">Town/City *</label>
+                    <input type="text" name="town/city" id="town/city" required="required"
+                        class="shipping-address-input">
+                </div>
+                <div class="shipping-address-info">
+                    <label for="postcode">Postcode *</label>
+                    <input type="text" name="postcode" id="postcode" required="required" class="shipping-address-input">
+                </div>
+                <div class="shipping-address-info">
+                    <label for="country">Country *</label>
+                    <input type="text" name="country" id="country" required="required" class="shipping-address-input">
+                </div>
+                <div class="shipping-address-info">
+                    <label for="state/county">State/County *</label>
+                    <input type="text" name="state/county" id="state/county" required="required"
+                        class="shipping-address-input">
+                </div>
+            </div>
+        </section>
 
+        <section id="payment-method" class="checkout-content">
+            <h2 class="checkout-subTitles">2. Payment Method</h2>
+            <div id="payment-method-content">
+                <div class="payment-method-info">
+                    <input type="radio" name="payment-type" value="credit-card">Credit Card
+                    <input type="radio" name="payment-type" value="paypal">PayPal
+                </div>
+                <div class="payment-method-info">
+                    <label for="firstNamePaymentMethod">First Name *</label>
+                    <input type="text" name="firstNamePaymentMethod" id="firstNamePaymentMethod" required="required"
+                        class="payment-method-input">
+                </div>
+                <div class="payment-method-info">
+                    <label for="lastNamePaymentMethod">Last Name *</label>
+                    <input type="text" name="lastNamePaymentMethod" id="lastNamePaymentMethod" required="required"
+                        class="payment-method-input">
+                </div>
+                <div class="payment-method-info">
+                    <label for="creditCardNumber">Credit Card Number *</label>
+                    <input type="text" name="creditCardNumber" id="creditCardNumber" required="required"
+                        class="payment-method-input">
+                </div>
+                <div class="payment-method-info">
+                    <label for="securityCode">Security Code *</label>
+                    <input type="text" name="securityCode" id="securityCode" required="required"
+                        class="payment-method-input">
+                </div>
+                <div class="payment-method-info">
+                    <label for="cardExpiration">Card Expiration *</label>
+                    <input type="text" name="cardExpiration" id="cardExpiration" required="required"
+                        class="payment-method-input">
+                </div>
+        </section>
+
+        <section id="Confirm Order" class="checkout-content">
+            <h2 class="checkout-subTitles">3. Confirm Order</h2>
+
+            <input type="checkbox" name="updates" value="updates" id="updates">Receive updates and notifications?
+            <div id="checkout-links">
+                <a href="../index.html" id="home">Continue Shopping</a>
+                <a href="purchase-loading.html">Purchase</a>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>

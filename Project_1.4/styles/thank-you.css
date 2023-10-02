@@ -1,0 +1,33 @@
+body {
+    background-color: #5a9b57;
+}
+
+#content {
+    background-color: #cfe3be;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 30px;
+    text-align: center;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+}
+
+#thank-you-text {
+    color: #597d37;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+#home-page-link {
+    background-color: #597d37;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10%;
+}

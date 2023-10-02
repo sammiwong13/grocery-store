@@ -155,3 +155,27 @@ product-list box shadow: #5a9b57;
     padding: 10px;
     border-radius: 10%;
 }
+
+#total-cost-content {
+    background-color: #cfe3be;
+    padding: 10px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 5px #5a9b57;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#total-cost {
+    font-size: 40px;
+}
+
+#checkout {
+    background-color: #597d37;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10%;
+}

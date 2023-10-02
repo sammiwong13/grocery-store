@@ -1,0 +1,106 @@
+#description {
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkout-content {
+    height: 100%;
+    width: 100%;
+    background-color: #cfe3be;
+    font-size: 30px;
+    padding: 20px;
+
+}
+
+#checkout-title {
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #597d37;
+    text-align: center;
+
+
+}
+
+.checkout-subTitles {
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #597d37;
+}
+
+#shipping-address-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    color: #6ab767;
+    gap: 10px;
+    padding: 20px;
+}
+
+.shipping-address-info {
+    width: 100%;
+}
+
+.shipping-address-input {
+    color: #597d37;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+#payment-method-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    color: #6ab767;
+    gap: 10px;
+    padding: 20px;
+}
+
+.payment-method-info {
+    width: 100%;
+
+}
+
+.payment-method-input {
+    color: #597d37;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+#updates-text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    color: #6ab767;
+    gap: 10px;
+    padding: 20px;
+}
+
+#checkout-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#checkout-links>a {
+    background-color: #597d37;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

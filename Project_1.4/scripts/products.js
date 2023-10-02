@@ -2,8 +2,11 @@ let cartItems = []; // Initialize an empty cartItems array
 let storedItems;
 let oldValue = [];
 let quantity = 1;
+let subtotalArray = [];
+
 
 let addToCartBtn = document.querySelectorAll(".add-to-cart-btn");
+let totalCost = document.getElementById("total-cost");
 
 function handleAddToCartClick() {
     //for each node in productBtns, retrieve the name, price, and image
@@ -85,14 +88,15 @@ function distinctArray(array) {
 }
 
 
+
+
 //make sure to do localStorage.clear() after the order is complete
 
 
 //Making the table in shopping-cart.html
 
 let shoppingCartTable = document.getElementById("shopping-cart-table");
-let mySubtotalSum = document.getElementById("subtotal-sum");
-let tax = document.getElementById("tax");
+
 
 //Only create these elements if it's on the shopping-cart.html page
 if (document.URL.includes("pages/shopping-cart.html")) {
@@ -110,6 +114,9 @@ if (document.URL.includes("pages/shopping-cart.html")) {
 
         //adding class attribute for each row
         newRow.setAttribute("class", "table-row")
+
+        //adding class attribute for each subtotal
+        newDataSubtotal.setAttribute("class", "table-subtotal")
 
         //Setting attributes of newDataImg element
         newDataImg.setAttribute("src", storedItems[i].image);
@@ -145,6 +152,7 @@ if (document.URL.includes("pages/shopping-cart.html")) {
 
             myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
             newDataSubtotal.textContent = myDataSubtotal;
+            totalCost.textContent = total(myDataSubtotal, storedItems);
         });
         newBtnUp.addEventListener("click", function () {
             handleBtnUpClick(newDataQuantity);
@@ -154,6 +162,9 @@ if (document.URL.includes("pages/shopping-cart.html")) {
 
             myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
             newDataSubtotal.textContent = myDataSubtotal;
+            totalCost.textContent = total(myDataSubtotal, storedItems);
+            // totalCost.textContent = "1";
+
         });
         //end of change quantity
 
@@ -178,7 +189,6 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         //Summary sidebar information
         // mySubtotalSum.textContent += parseFloat(newDataSubtotal.textContent);
         // mySubtotalSum.textContent = subtotalSum(newDataSubtotal);
-        tax.textContent = "7%";
 
         //each time you click on clear cart, the table will refresh
         let clearCart = document.getElementById("clear-cart");
@@ -197,9 +207,27 @@ if (document.URL.includes("pages/shopping-cart.html")) {
             localStorage.setItem("myCartItems", JSON.stringify(sto))
             location.reload();
         });
-    }
 
+        //creating an array of subtotal
+        let subtotal = document.querySelectorAll(".table-subtotal");
+
+        subtotal.forEach(eachSubtotal => {
+            subtotalArray.push(eachSubtotal.textContent);
+        });
+
+
+    }
 }
+
+
+function total(myDataSubtotal, storedItems) {
+    let sum = 0;
+    for (let i = 0; i < storedItems.length; i++) {
+        sum += storedItems[i].subtotal;
+    }
+    return sum;
+}
+
 
 function handleBtnDownClick(element) {
     let quantity = parseInt(element.textContent);
@@ -232,25 +260,13 @@ function updateSubtotal(price, quantity) {
     }
 }
 
-function subtotalSum(element) {
-    let sum;
-    let cost = parseFloat(element.textContent);
-    sum += cost;
-    return sum;
-}
+// function subtotalSum(element) {
+//     let sum;
+//     let cost = parseFloat(element.textContent);
+//     sum += cost;
+//     return sum;
+// }
 
-// if quantity on table doesn't match quantity in storedItem, update quantity in storedItem
-function updateQuantity(elementQty, objectProduct, array) {
-
-    //quantity is already set to storedItem.quantity
-    //            updateQuantity(newDataQuantity, storedItems[i], storedItems);
-
-    let quantity = parseInt(elementQty.textContent);
-    let storedQuantity = objectProduct.quantity;
-    if (storedQuantity !== quantity) {
-        storedQuantity = quantity;
-    }
-}
 
 //Button ripple effect (udemy day 20)
 let buttons = document.querySelectorAll('.ripple')
