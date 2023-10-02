@@ -140,14 +140,19 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         //change quantity
         newBtnDown.addEventListener("click", function () {
             handleBtnDownClick(newDataQuantity);
-            updateQuantity(newDataQuantity, storedItems[i], storedItems);
+            // updateQuantity(newDataQuantity, storedItems[i], storedItems);
+            // updateQuantityInLocalStorage(storedItems[i], newDataQuantity.textContent);
+
             myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
             newDataSubtotal.textContent = myDataSubtotal;
         });
         newBtnUp.addEventListener("click", function () {
             handleBtnUpClick(newDataQuantity);
-            updateQuantity(newDataQuantity, storedItems[i], storedItems);
-            localStorage.setItem("myCartItems", JSON.stringify(distinctCombinedCart));
+            // updateQuantity(newDataQuantity, storedItems[i], storedItems);
+
+            // updateQuantityInLocalStorage(storedItems[i], newDataQuantity.textContent);
+
+            myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
             newDataSubtotal.textContent = myDataSubtotal;
         });
         //end of change quantity
@@ -180,13 +185,25 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         clearCart.addEventListener("click", () => {
             localStorage.clear();
         });
+
+        //each time you click on update cart, the page would reload
+        let updateCart = document.getElementById("update-cart");
+        updateCart.addEventListener("click", () => {
+            let quantityInTable = parseInt(newDataQuantity.textContent);
+            let cartItems = JSON.parse(localStorage.getItem("myCartItem"));
+            if (storedItems[i].quantity !== quantityInTable) {
+                storedItems[i].quantity = quantityInTable;
+            }
+            localStorage.setItem("myCartItems", JSON.stringify(sto))
+            location.reload();
+        });
     }
 
 }
 
 function handleBtnDownClick(element) {
     let quantity = parseInt(element.textContent);
-    if (quantity < 1) {
+    if (quantity <= 1) {
         //do nothing
     } else {
         quantity--;

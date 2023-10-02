@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
 /*
 pistachio: #bddfcf;     use for button 
 tea: #cfe3be;       use for content container
@@ -84,74 +86,49 @@ product-list box shadow: #5a9b57;
     top: 100px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #597d37;
+    background-color: #bddfcf;
 }
 
-#clear-cart {
-    background-color: #75bd85;
-    width: 20%;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    box-shadow: 5px 5px 5px #5a9b57;
-}
-
-#update-cart {
-    background-color: #75bd85;
-    width: 20%;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    box-shadow: 5px 5px 5px #5a9b57;
-}
-
-.table-content {
-    display: grid;
-    grid-template-columns: 75% 20%;
-    grid-template-rows: auto;
-    gap: 5%;
-
-}
-
-.shopping-cart-title {
+.about-us-title {
     font-size: 50px;
     text-align: center;
 }
 
-#shopping-cart-table {
-    background-color: #cfe3be;
-    padding: 30px;
-    box-shadow: 5px 5px 5px #5a9b57;
-}
+/*Counter Udemy*/
 
-#shopping-cart-table .table-row {
-    background-color: #bddfcf;
-    text-align: center;
-    font-size: 30px;
-    color: #6ab767;
-}
-
-#shopping-cart-table th {
-    background-color: #6ab767;
-    font-size: 30px;
-    padding: 5px;
-}
-
-.quantity-cell {
+/* body {
+    color: red;
+    font-family: 'Roboto Mono', sans-serif;
     display: flex;
-    gap: 10px;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+} */
+
+#counter-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
 }
 
-.quantity-btn {
-    background-color: #cfe3be;
-    border-color: #6ab767;
-    border-width: 3px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #597d37;
-    padding: 10px;
-    border-radius: 10%;
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 50px;
+}
+
+.counter {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+@media (max-width: 580px) {
+    body {
+        flex-direction: column;
+    }
 }
