@@ -14,6 +14,13 @@
         <p id="description">Fields marked with * are mandatory</p>
         <section id="shipping-address" class="checkout-content">
             <h2 class="checkout-subTitles">1. Shipping Address</h2>
+            <div id="shipping-address-description">
+                <ul>
+                    <li>All fields cannot be left empty</li>
+                    <li>Email: Must contains an '@'</li>
+                    <li>Postcode: Must be 5 digits long</li>
+                </ul>
+            </div>
             <div id="shipping-address-content">
                 <div class="shipping-address-info">
                     <label for="firstNameShippingAddress">First Name *</label>
@@ -26,7 +33,7 @@
                         class="shipping-address-input">
                 </div>
                 <div class="shipping-address-info">
-                    <label for="Email">Email *</label>
+                    <label for="email">Email *</label>
                     <input type="email" name="email" id="email" required="required" class="shipping-address-input">
                 </div>
                 <div class="shipping-address-info">
@@ -35,8 +42,8 @@
                         class="shipping-address-input">
                 </div>
                 <div class="shipping-address-info">
-                    <label for="town/city">Town/City *</label>
-                    <input type="text" name="town/city" id="town/city" required="required"
+                    <label for="town-city">Town/City *</label>
+                    <input type="text" name="town-city" id="town-city" required="required"
                         class="shipping-address-input">
                 </div>
                 <div class="shipping-address-info">
@@ -48,8 +55,8 @@
                     <input type="text" name="country" id="country" required="required" class="shipping-address-input">
                 </div>
                 <div class="shipping-address-info">
-                    <label for="state/county">State/County *</label>
-                    <input type="text" name="state/county" id="state/county" required="required"
+                    <label for="state-county">State/County *</label>
+                    <input type="text" name="state-county" id="state-county" required="required"
                         class="shipping-address-input">
                 </div>
             </div>
@@ -57,9 +64,16 @@
 
         <section id="payment-method" class="checkout-content">
             <h2 class="checkout-subTitles">2. Payment Method</h2>
+            <div id="payment-method-description">
+                <ul>
+                    <li>All fields cannot be left empty</li>
+                    <li>Credit card number: Must be 16 digits long</li>
+                    <li>Security code: Must be 3 digits long</li>
+                </ul>
+            </div>
             <div id="payment-method-content">
                 <div class="payment-method-info">
-                    <input type="radio" name="payment-type" value="credit-card">Credit Card
+                    <input type="radio" name="payment-type" value="credit-card" checked="checked">Credit Card
                     <input type="radio" name="payment-type" value="paypal">PayPal
                 </div>
                 <div class="payment-method-info">
@@ -84,21 +98,23 @@
                 </div>
                 <div class="payment-method-info">
                     <label for="cardExpiration">Card Expiration *</label>
-                    <input type="text" name="cardExpiration" id="cardExpiration" required="required"
+                    <input type="date" name="cardExpiration" id="cardExpiration" required="required"
                         class="payment-method-input">
                 </div>
         </section>
 
         <section id="Confirm Order" class="checkout-content">
             <h2 class="checkout-subTitles">3. Confirm Order</h2>
-
-            <input type="checkbox" name="updates" value="updates" id="updates">Receive updates and notifications?
+            <input type="checkbox" name="updates" value="updates" id="updates-text">
+            <label for="updates" id="updates-text">Receive updates and notifications?</label>
             <div id="checkout-links">
                 <a href="../index.html" id="home">Continue Shopping</a>
-                <a href="purchase-loading.html">Purchase</a>
+                <a href="purchase-loading.html" id="purchaseBtn">Purchase</a>
             </div>
         </section>
+
     </div>
+    <script src="../scripts/checkout.js"></script>
 </body>
 
 </html>

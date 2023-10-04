@@ -8,6 +8,11 @@ let subtotalArray = [];
 let addToCartBtn = document.querySelectorAll(".add-to-cart-btn");
 let totalCost = document.getElementById("total-cost");
 
+// Loop through each "Add to Cart" button and add the click event listener
+addToCartBtn.forEach(myProductBtn => {
+    myProductBtn.addEventListener("click", handleAddToCartClick);
+});
+
 function handleAddToCartClick() {
     //for each node in productBtns, retrieve the name, price, and image
 
@@ -53,11 +58,6 @@ function handleAddToCartClick() {
     }
 }
 
-// Loop through each "Add to Cart" button and add the click event listener
-addToCartBtn.forEach(myProductBtn => {
-    myProductBtn.addEventListener("click", handleAddToCartClick);
-});
-
 // Retrieve the cartItems from localStorage when the page loads
 storedItems = JSON.parse(localStorage.getItem("myCartItems"));
 
@@ -86,12 +86,6 @@ function distinctArray(array) {
     }
     return distinctArray2;
 }
-
-
-
-
-//make sure to do localStorage.clear() after the order is complete
-
 
 //Making the table in shopping-cart.html
 
@@ -135,7 +129,7 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         newDataQuantity.textContent = storedItems[i].quantity;
         newBtnUp.textContent = "up";
 
-        newDataName.textContent = storedItems[i].name;
+        newDataName.textContent = storedItems[i].name.toUpperCase();
         newDataPrice.textContent = storedItems[i].price;
 
         //Default is to set subtotal equal to price of quantity 1
@@ -225,6 +219,7 @@ function total(myDataSubtotal, storedItems) {
     for (let i = 0; i < storedItems.length; i++) {
         sum += storedItems[i].subtotal;
     }
+    sum.toFixed(2);
     return sum;
 }
 
