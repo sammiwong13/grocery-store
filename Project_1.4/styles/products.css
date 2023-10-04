@@ -161,15 +161,8 @@ button {
     overflow: hidden;
     position: relative;
     border-radius: 10%;
+    cursor: pointer;
 }
-
-/* .add-to-cart-btn {
-    background-color: #cfe3be;
-    border-color: #6ab767;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #597d37;
-
-} */
 
 button:focus {
     outline: none;

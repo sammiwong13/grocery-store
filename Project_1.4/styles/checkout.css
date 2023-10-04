@@ -119,3 +119,8 @@
 .valid-input {
     border-color: #6ab767;
 }
+
+.payment-type,
+#updates-text {
+    cursor: pointer;
+}
