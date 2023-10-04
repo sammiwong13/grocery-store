@@ -109,10 +109,6 @@ product-list box shadow: #5a9b57;
     border-radius: 5%;
 }
 
-/* .add-to-cart-btn:hover {
-    background-color: #bddfcf;
-} */
-
 .product-image {
     width: 30%;
     height: 30%;
@@ -135,16 +131,6 @@ product-list box shadow: #5a9b57;
     font-size: 25px;
     color: black;
 }
-
-/* .add-to-cart-btn {
-    background-color: #cfe3be;
-    border-color: #6ab767;
-    border-width: 3px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #597d37;
-    padding: 10px;
-    border-radius: 10%;
-} */
 
 /*Footer*/
 footer {

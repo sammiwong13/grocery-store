@@ -148,7 +148,7 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         newDataSubtotal.textContent = storedItems[i].subtotal;
 
         let myDataSubtotal;
-        totalCost.textContent = "$" + total(myDataSubtotal, storedItems);
+        totalCost.textContent = "$" + total(storedItems);
 
         //setting hegiht and width manually but implemetn this in CSS instead
         newDataImg.setAttribute("height", "100px");
@@ -170,18 +170,6 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         let clearCart = document.getElementById("clear-cart");
         clearCart.addEventListener("click", () => {
             localStorage.clear();
-        });
-
-        //each time you click on update cart, the page would reload
-        let updateCart = document.getElementById("update-cart");
-        updateCart.addEventListener("click", () => {
-            let quantityInTable = parseInt(newDataQuantity.textContent);
-            let cartItems = JSON.parse(localStorage.getItem("myCartItem"));
-            if (storedItems[i].quantity !== quantityInTable) {
-                storedItems[i].quantity = quantityInTable;
-            }
-            localStorage.setItem("myCartItems", JSON.stringify(sto))
-            location.reload();
         });
 
         //creating an array of subtotal
@@ -209,14 +197,8 @@ if (document.URL.includes("pages/shopping-cart.html")) {
     });
 }
 
-
-//for each subtotal in shopping cart, combine and change total cost
-function updateTotal(shoppingCartTable) {
-    return shoppingCartTable;
-}
-
-
-function total(myDataSubtotal, storedItems) {
+//Finds the total cost of items added to cart already. 
+function total(storedItems) {
     let sum = 0;
     for (let i = 0; i < storedItems.length; i++) {
         sum += storedItems[i].subtotal;
@@ -225,7 +207,7 @@ function total(myDataSubtotal, storedItems) {
     return sum;
 }
 
-
+//Decrease quantity count
 function handleBtnDownClick(element) {
     let quantity = parseInt(element.textContent);
     if (quantity <= 1) {
@@ -236,12 +218,14 @@ function handleBtnDownClick(element) {
     }
 }
 
+//Increase quantity count
 function handleBtnUpClick(element) {
     let quantity = parseInt(element.textContent);
     quantity++;
     element.textContent = quantity;
 }
 
+//Calculate subtotal by multiplying price and quantity
 function updateSubtotal(price, quantity) {
     //first change price to float with parseFloat() and quantity to int with parseInt(), then price * quantity
     let myPrice = parseFloat(price.textContent);
