@@ -88,13 +88,11 @@ function distinctArray(array) {
 }
 
 //Making the table in shopping-cart.html
-
 let shoppingCartTable = document.getElementById("shopping-cart-table");
 
-
-//Only create these elements if it's on the shopping-cart.html page
 if (document.URL.includes("pages/shopping-cart.html")) {
     for (let i = 0; i < storedItems.length; i++) {
+        //Creating elements in table and appending it to shoppingCartTable
         let newRow = document.createElement("tr");
         let newDataImgCell = document.createElement("td");
         let newDataImg = document.createElement("img");
@@ -105,6 +103,21 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         let newDataQuantity = document.createElement("div");
         let newBtnUp = document.createElement("button");
         let newDataSubtotal = document.createElement("td");
+
+        //append the elements to quantity cell
+        newDataQuantityCell.appendChild(newBtnDown);
+        newDataQuantityCell.appendChild(newDataQuantity);
+        newDataQuantityCell.appendChild(newBtnUp);
+
+        //append the elements to the newRow
+        newRow.appendChild(newDataImgCell);
+        newRow.appendChild(newDataName);
+        newRow.appendChild(newDataPrice);
+        newRow.appendChild(newDataQuantityCell);
+        newRow.appendChild(newDataSubtotal);
+
+        //append each row element to the table
+        shoppingCartTable.appendChild(newRow);
 
         //adding class attribute for each row
         newRow.setAttribute("class", "table-row")
@@ -124,65 +137,34 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         newBtnDown.setAttribute("class", "decrease-product-quantity quantity-btn");
         newBtnUp.setAttribute("class", "increase-product-quantity quantity-btn");
 
+        //Setting contents in quantity column
         newBtnDown.textContent = "down";
-        // newDataQuantity.textContent = "1";
         newDataQuantity.textContent = storedItems[i].quantity;
         newBtnUp.textContent = "up";
 
+        //Setting contents in for item name, price, and subtotal
         newDataName.textContent = storedItems[i].name.toUpperCase();
         newDataPrice.textContent = storedItems[i].price;
-
-        //Default is to set subtotal equal to price of quantity 1
-        // newDataSubtotal.textContent = newDataPrice.textContent;
         newDataSubtotal.textContent = storedItems[i].subtotal;
 
         let myDataSubtotal;
+        totalCost.textContent = "$" + total(myDataSubtotal, storedItems);
 
-        //change quantity
-        newBtnDown.addEventListener("click", function () {
-            handleBtnDownClick(newDataQuantity);
-            // updateQuantity(newDataQuantity, storedItems[i], storedItems);
-            // updateQuantityInLocalStorage(storedItems[i], newDataQuantity.textContent);
-
-            myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
-            newDataSubtotal.textContent = myDataSubtotal;
-            totalCost.textContent = total(myDataSubtotal, storedItems);
-        });
-        newBtnUp.addEventListener("click", function () {
-            handleBtnUpClick(newDataQuantity);
-            // updateQuantity(newDataQuantity, storedItems[i], storedItems);
-
-            // updateQuantityInLocalStorage(storedItems[i], newDataQuantity.textContent);
-
-            myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
-            newDataSubtotal.textContent = myDataSubtotal;
-            totalCost.textContent = total(myDataSubtotal, storedItems);
-            // totalCost.textContent = "1";
-
-        });
-        //end of change quantity
-
-        newDataQuantityCell.appendChild(newBtnDown);
-        newDataQuantityCell.appendChild(newDataQuantity);
-        newDataQuantityCell.appendChild(newBtnUp);
-
-        /////for the time being, setting hegiht and width manually but implemetn this in CSS instead
+        //setting hegiht and width manually but implemetn this in CSS instead
         newDataImg.setAttribute("height", "100px");
         newDataImg.setAttribute("width", "100px");
 
-        //append the elements to the newRow
-        newRow.appendChild(newDataImgCell);
-        newRow.appendChild(newDataName);
-        newRow.appendChild(newDataPrice);
-        newRow.appendChild(newDataQuantityCell);
-        newRow.appendChild(newDataSubtotal);
-
-        //append each row element to the table
-        shoppingCartTable.appendChild(newRow);
-
-        //Summary sidebar information
-        // mySubtotalSum.textContent += parseFloat(newDataSubtotal.textContent);
-        // mySubtotalSum.textContent = subtotalSum(newDataSubtotal);
+        //change quantity with click event listener
+        newBtnDown.addEventListener("click", function () {
+            handleBtnDownClick(newDataQuantity);
+            myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
+            newDataSubtotal.textContent = myDataSubtotal;
+        });
+        newBtnUp.addEventListener("click", function () {
+            handleBtnUpClick(newDataQuantity);
+            myDataSubtotal = updateSubtotal(newDataPrice, newDataQuantity);
+            newDataSubtotal.textContent = myDataSubtotal;
+        });
 
         //each time you click on clear cart, the table will refresh
         let clearCart = document.getElementById("clear-cart");
@@ -208,9 +190,29 @@ if (document.URL.includes("pages/shopping-cart.html")) {
         subtotal.forEach(eachSubtotal => {
             subtotalArray.push(eachSubtotal.textContent);
         });
-
-
     }
+
+    //Update total cost when quantity buttons are clicked
+    let rows = document.querySelectorAll(".table-subtotal");
+    let newTotal = 0;
+    let quantityBtn = document.querySelectorAll(".quantity-btn");
+
+    quantityBtn.forEach(btn => {
+        btn.addEventListener("click", () => {
+            rows.forEach(row => {
+                newTotal += parseFloat(row.textContent);
+            });
+            totalCost.textContent = "$" + newTotal.toFixed(2);
+            //resets the value
+            newTotal = 0;
+        });
+    });
+}
+
+
+//for each subtotal in shopping cart, combine and change total cost
+function updateTotal(shoppingCartTable) {
+    return shoppingCartTable;
 }
 
 
@@ -241,7 +243,6 @@ function handleBtnUpClick(element) {
 }
 
 function updateSubtotal(price, quantity) {
-    //Setting default text for the subtotal
     //first change price to float with parseFloat() and quantity to int with parseInt(), then price * quantity
     let myPrice = parseFloat(price.textContent);
     let myQuantity = parseInt(quantity.textContent);
@@ -254,14 +255,6 @@ function updateSubtotal(price, quantity) {
         return -1;
     }
 }
-
-// function subtotalSum(element) {
-//     let sum;
-//     let cost = parseFloat(element.textContent);
-//     sum += cost;
-//     return sum;
-// }
-
 
 //Button ripple effect (udemy day 20)
 let buttons = document.querySelectorAll('.ripple')
@@ -287,6 +280,3 @@ buttons.forEach(button => {
         setTimeout(() => circle.remove(), 500)
     })
 })
-
-
-
