@@ -132,3 +132,10 @@ product-list box shadow: #5a9b57;
         flex-direction: column;
     }
 }
+
+#author {
+    position: relative;
+    top: -100px;
+    left: 20px;
+    font-size: 20px;
+}
