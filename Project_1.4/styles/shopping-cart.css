@@ -178,4 +178,17 @@ product-list box shadow: #5a9b57;
     text-decoration: none;
     padding: 5px;
     border-radius: 10%;
+    animation-name: flickeringbutton;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flickeringbutton {
+    from {
+        background-color: #6ab767;
+    }
+
+    to {
+        background-color: #597d37;
+    }
 }
