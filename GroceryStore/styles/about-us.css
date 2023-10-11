@@ -41,17 +41,6 @@ product-list box shadow: #5a9b57;
     font-size: 30px;
 }
 
-.search-bar {
-    width: 60%;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #bddfcf;
-    font-size: 20px;
-}
-
-.search-bar:focus {
-    background-color: #597d37;
-}
-
 .shopping-cart {
     text-align: center;
     color: white;

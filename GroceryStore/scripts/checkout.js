@@ -44,7 +44,7 @@ function validateShippingAddress() {
         //checks if shipping address town/city is empty
         townCity.classList.add("invalid-input");
         return false;
-    } else if (postcode.value.length !== 5 || isNaN(postcode.value)) {
+    } else if (postcode.value.length !== 5 || isNaN(postcode.value) || postcode.value === '') {
         //checks if postcode's length is 5 and comprised of numbers only
         postcode.classList.add("invalid-input");
         return false;
@@ -69,11 +69,11 @@ function validatePaymentMethod() {
         //checks if payment method last name is empty
         lastNamePaymentMethod.classList.add("invalid-input");
         return false;
-    } else if (creditCardNumber.value.length !== 16 || isNaN(creditCardNumber.value)) {
+    } else if (creditCardNumber.value.length !== 16 || isNaN(creditCardNumber.value) || creditCardNumber.value === '') {
         //checks if credit card number is length is 16 and comprised of numbers only
         creditCardNumber.classList.add("invalid-input");
         return false;
-    } else if (securityCode.value.length !== 3 || isNaN(securityCode.value)) {
+    } else if (securityCode.value.length !== 3 || isNaN(securityCode.value) || securityCode.value === '') {
         //checks if security code is length is 3 and comprised of numbers only
         securityCode.classList.add("invalid-input");
         return false;
